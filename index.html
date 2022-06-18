@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+  margin: 0;
+  padding: 0;
+}
+body{
+    overflow: hidden;
+}
+main {
+  overflow: hidden;
+  background: #d8c0c07a;
+  height: 100vh; 
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.name {
+  font-family: "Montserrat", sans-serif;
+  color: rgb(63, 63, 63);
+  font-size: 100px;
+  font-weight: 600;
+  z-index: 5;
+  text-shadow: #888 5px 5px 10px;
+}
+
+span {
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  position: absolute;
+  pointer-events: none;
+  background: #f3558c;
+  box-shadow:  20px 20px 60px #cf4877, 
+             -20px -20px 60px #ff62a1;
+  transform: translate(-50%, -50%);
+  animation: anime 4s linear forwards;
+}
+
+
+@keyframes anime {
+  0% {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -1000%);
+    opacity: 0;
+    filter: hue-rotate(360deg);
+  }
+}
+</style>
+<body>
+  <main onmousemove="create(event)">
+    <div class="name">
+        zahra salimi
+      </div>  
+  </main>
+</body>
+<script>
+  let _main=document.getElementsByTagName("main")[0];function create(b){console.log(b);let a=document.createElement("span");_main.appendChild(a);let d=b.clientX,e=b.clientY;a.style.left=d+"px",a.style.top=e+"px";let c=100*Math.random();a.style.width=5+c+"px",a.style.height=5+c+"px"}
+</script>
+</html>
